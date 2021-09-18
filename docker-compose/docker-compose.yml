@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+    basketdb:
+        hostname: basketdb:6379
+        image: redis
+    dockerexample:
+        image: ${DOCKER_REGISTRY-}dockerexample
+        build:
+            context: .
+            dockerfile: DockerExample/Dockerfile
